@@ -1,0 +1,28 @@
+{% extends "admin/base.html" %}
+
+{% block title %}登录页{% endblock %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <div class="div_body" style="text-align: center;margin-top: 10%">
+        <h1 style="margin-bottom: 1.5%">登陆界面</h1>
+        <form action="" method="post">
+            <input type="text" name="username" id="username"  placeholder="账号">
+            <br><br>
+            <input type="password" name="password" id="password"  placeholder="密码">
+            <br><br>
+            <input type="submit" name="" id="">
+            {# 获取消息 #}
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes style="text-align: center;color: red">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        </form>
+    </div>
+
+{% endblock %}

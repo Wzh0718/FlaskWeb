@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+
+{% block title %}主页{% endblock %}
+{% block head %}{% endblock %}
+{% block body %}
+    <div style="text-align: center;margin-top: 10%">
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" id="info" class = "info" name="info">
+        <input type="submit">
+        <br><br>
+        {# 获取消息 #}
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes style="text-align: center;color: red;margin-bottom: 1.2%">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        {% for mes in message %}
+            <span>{{ mes }}&nbsp</span>
+        {% endfor %}
+
+    </form>
+    </div>
+{% endblock %}

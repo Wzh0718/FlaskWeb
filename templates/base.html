@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}学生主页{% endblock %}</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav>
+        <div class="sidebar-top">
+            <span class="shrink-btn">
+                <i class='bx bx-chevron-left'></i>
+            </span>
+            <img src="{{ url_for("static", filename="img/logo.png") }}" alt="" class="logo">
+            <h3 class="hide">计算机学院</h3>
+        </div>
+
+        <div class="sidebar-links">
+            <ul>
+                <li>
+                    <a href="{{ url_for("func.func1") }}" style="margin-top: 10%" class="active" data-active="0">
+                        <span class="link hide">学生信息查询</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for("static", filename="js/app.js") }}"></script>
+</body>
+</html>
