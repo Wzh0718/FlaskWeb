@@ -85,8 +85,9 @@
 
 ## 3. 网站展示
 
-![1658672330635](https://user-images.githubusercontent.com/61780819/180656588-4f7348cd-b633-45ed-9faf-3c8db4aa844a.jpg)
-![1658672273647](https://user-images.githubusercontent.com/61780819/180656590-2b33f038-c7f3-437f-ab0e-cf66079b77da.jpg)
+![image](https://user-images.githubusercontent.com/61780819/183365093-23e3ff65-20fa-4073-a792-b5bed0e31bf1.png)
+![image](https://user-images.githubusercontent.com/61780819/183365223-3b7b8005-3318-437c-9f9e-facd6a67293d.png)
+
 
 
 
@@ -99,15 +100,6 @@
 
 ## 5. Web性能测试
 
-- Lighthouse
-
-  - pc端：
-    <img width="1169" alt="image-20220724222235456" src="https://user-images.githubusercontent.com/61780819/180656657-d895e88a-6d8b-4ab5-b2bd-7aad38d08a8f.png">
-
-  - 移动端 --> 适配问题：
-    <img width="1169" alt="image-20220724222355408" src="https://user-images.githubusercontent.com/61780819/180656631-ff38cb85-e66d-4f45-93bd-efa417f0e67e.png">
-
-    
 -  [Gtmetrix](https://gtmetrix.com)
 
-   <img width="612" alt="image-20220724222746989" src="https://user-images.githubusercontent.com/61780819/180656630-aa24b839-1956-4a8d-a992-f28f30b04797.png">
+![image](https://user-images.githubusercontent.com/61780819/183365348-9d168e4e-4b84-4c82-82ed-bfcd6bd74793.png)
