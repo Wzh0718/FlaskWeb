@@ -3,74 +3,57 @@
 {% block title %}学生信息查询{% endblock %}
 
 {% block head %}
-  <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/bootstrap@4.6.min.css') }}">
-  <script src="{{ url_for('static',filename='jquery/jquery.min.js') }}"></script>
-  <script src="{{ url_for('static',filename='js/query.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/bootstrap@4.6.min.css') }}">
+    <script src="{{ url_for('static',filename='jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/query.js') }}"></script>
 {% endblock %}
 
 
 {% block body %}
-  <div class="cow" style="margin-top: 20px">
-    <div class="col-8 container">
-      <h2 style="text-align:center ">信息查询</h2>
-      <form method="post" action="{{ url_for("func.func1") }}">
+{#  <meta name="viewport" content="width=device-width,initial-scale=0.5,minimum-scale=0.5,maximum-scale=1.0,user-scalable=yes">#}
+  <div >
+    <div class="index_body">
+      <h1 style="text-align:center" class="index_slogin">信息查询</h1>
+      <form method="post" action="{{ url_for("func.func1") }}" onsubmit="return check()">
           <div class="form-group row" style="margin-top: 20px">
 {#            <label for="InputIdcard" class="col-sm-2 col-form-label" style="text-align: right">身份证号：</label>#}
             <div class="col-sm-12">
-              <input type="text" class="form-control" id="InputIdcard" name="idcard" placeholder="请输入身份证号">
+              <input type="text" class="index_input_idcrad" name="idcard" placeholder="请输入身份证号"><br>
             </div>
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block" id="query-btn">查询</button>
+            <button type="submit" class="query-btn" >查询</button>
           </div>
       </form>
-    </div>
-  </div>
-    {# 获取消息 #}
+          {# 获取消息 #}
     {% with messages = get_flashed_messages() %}
       {% if messages %}
-        <ul class=flashes style="text-align: center;color: red">
+        <ul class=flashes style="text-align: center;color: red;font-weight: bold;font-size: 18px ">
         {% for message in messages %}
           <li>{{ message }}</li>
         {% endfor %}
         </ul>
       {% endif %}
     {% endwith %}
-{#  {% for stuinfo in stuinfos %}#}
-  {% if stuinfos %}
-  <div id="query_results">
-    <div class="row">
-      <div class="col-sm"></div>
-      <div class="col-8 border">
-        <h6 style="text-align: center;margin-top: 20px">查询结果</h6>
-        <div class="row" style="margin-block-end: 20px">
-          <div class="col-6 left" style="text-align: center">
-            <ul class="list-group list-group-horizontal.flex-fill">
-              <li class="list-group-item" style="background-color: rgba(105,110,117,0.6)">学生姓名</li>
-              <li class="list-group-item">{{ stuinfos[12]}}</li>
-              <li class="list-group-item" style="background-color: rgba(105,110,117,0.6)">学生班级</li>
-              <li class="list-group-item">{{ stuinfos[13]}}</li>
-              <li class="list-group-item" style="background-color: rgba(105,110,117,0.6)">宿舍号</li>
-              <li class="list-group-item">{{ stuinfos[2]}}-{{ stuinfos[5] }}</li>
-            </ul>
-          </div>
-          <div class="col-6 right" style="text-align: center">
-            <ul class="list-group list-group-horizontal.flex-fill">
-              <li class="list-group-item" style="background-color: rgba(105,110,117,0.6)">校区</li>
-              <li class="list-group-item">{{ stuinfos[0]}}</li>
-              <li class="list-group-item" style="background-color: rgba(105,110,117,0.6)">辅导员</li>
-              <li class="list-group-item">{{ stuinfos[14]}}</li>
-              <li class="list-group-item" style="background-color: rgba(105,110,117,0.6)">辅导员联系方式</li>
-              <li class="list-group-item">{{ stuinfos[15]}}</li>
-            </ul>
-            </ul>
+  </div>
+      <div class="index_result">
+          {% if stuinfos %}
+      <div id="query_results">
+        <div class="row">
+          <div class="index_stuinfo" >
+                <ul class="index_stuinfo_main">
+                    <li class="index_stuinfo_li" >校区：{{ stuinfos[0]}}</li>
+                    <li class="index_stuinfo_li" >学生姓名：{{ stuinfos[12]}}</li>
+                    <li class="index_stuinfo_li" >学生班级：{{ stuinfos[13]}}</li>
+                    <li class="index_stuinfo_li" >宿舍号：{{ stuinfos[2]}}-{{ stuinfos[5] }}</li>
+                    <li class="index_stuinfo_li" >辅导员及联系方式：{{ stuinfos[14]}}  {{ stuinfos[15]}}</li>
+                </ul>
+            </div>
           </div>
         </div>
+              </div>
+      {% endif %}
+
       </div>
-      <div class="col-sm"></div>
-    </div>
-  </div>
-  {% endif %}
-{#  {% endfor %}#}
 {% endblock %}

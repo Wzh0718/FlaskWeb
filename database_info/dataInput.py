@@ -1,10 +1,15 @@
 # coding=UTF-8
 from sqlalchemy import create_engine
 import pandas as pd
+from database_info import conMysql
+
+
 # pip install xlrd==1.2.0
 
 def DataProcessing(path):
-    engine = create_engine('mysql+pymysql://root:123456@localhost:3306/stuinfo_1?charset=utf8')
+    root, password, coninfo = conMysql.connect()
+    sql = 'mysql+pymysql://'+root+':'+password+'@'+coninfo+':3306/stuinfo_1?charset=utf8'
+    engine = create_engine(sql)
     # 数据读取
     data = pd.read_excel(path, sheet_name=0)
     data.drop(["序号", "价格", "学生类型", "分配届别", "分配院系"], axis=1, inplace=True)

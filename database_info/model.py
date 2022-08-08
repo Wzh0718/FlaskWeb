@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-class Admin( db.Model):
+class Admin(db.Model):
     __tablename__ = 'admin'
     username = Column(String(80), primary_key=True)
     password = Column(String(160))

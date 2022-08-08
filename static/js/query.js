@@ -1,17 +1,9 @@
-function querybtn() {
-    $("#query-btn").on('click',function (event){
-        var $this = $(this)
-        var idcard = $("input[name='idcard']").val();
-        if(!idcard){
-            alert('请输入身份证号')
-            return
-        }
-        // var divstyle =document.getElementById("query_results")
-        // divstyle.style='display:"" '
-    })
+function check() {
+    const inputElement = document.getElementById("idcard");
+    console.log(inputElement)
+    if (inputElement.value === ""){
+        alert("请输入身份证进行查询");
+        return false;
+    }
+    return true;
 }
-
-
-$(function (){
-    querybtn();
-})

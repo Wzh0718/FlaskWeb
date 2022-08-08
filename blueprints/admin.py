@@ -1,15 +1,15 @@
 # coding=UTF-8
-import time, os
+import os
+import time
 
-from flask import Blueprint, render_template, request, url_for, redirect, session, flash
+from flask import Blueprint, render_template, request, redirect, session, flash
+
 from database_info.dataInput import DataProcessing
 from database_info.model import db
 
 bp = Blueprint("admin", __name__, url_prefix='/admin')
 
 
-# 伪基站
-@bp.route('/test/number/session')
 def find():
     usrname_list = db.session.execute("select username from admin")
     password_list = db.session.execute("select password from admin")
