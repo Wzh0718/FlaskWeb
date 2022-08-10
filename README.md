@@ -80,6 +80,7 @@
   ```python
   """"此处略过""""
   注意只需要建立1个database，不需要建立表。
+  使用Admin界面，需要直接在databse下面的Admin表创建账号和秘密，不支持注册
   database使用utf8的编译
   同时在v2.1版本中已经统一格式，只需要在conMysql文件下写对应信息即可
   ```
